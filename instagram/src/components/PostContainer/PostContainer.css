@@ -1,0 +1,33 @@
+.post-container{
+    border: 1px solid black;
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    max-width: 600px;
+}
+
+.image{
+    width: 100%;
+}
+
+.post-user-container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+}
+
+.post-user-container span{
+    font-weight: bold;
+}
+
+.thumbnail{
+    margin-right: 10px;
+    border-radius: 50px;
+    width: 35px;
+    height: 35px;
+}

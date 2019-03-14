@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import PostContainer  from "./components/PostContainer/PostContainer";
-
+import SearchBar from "./components/SearchBar/SearchBar";
 
 import data from "./dummy-data";
 
@@ -20,8 +19,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+            <SearchBar />
             {this.state.data.map(post => {
-                return <PostContainer data={post} />
+                return <PostContainer data={post} key={post.timestamp}/>
               })}
       </div>
     );
@@ -29,3 +29,4 @@ class App extends Component {
 }
 
 export default App;
+
