@@ -7,7 +7,9 @@ export default function SearchBar(props) {
     return (
         <div className="search-bar">
             <div className="search-image">
-                <Instagram strokeWidth={3} size={48} />
+                <div className="insta-logo">
+                    <Instagram strokeWidth={3} size={48} />
+                </div>
                 <span>Instagram</span>
             </div>
             <div className="search-box">

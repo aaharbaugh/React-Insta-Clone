@@ -2,18 +2,30 @@
     display: flex;
     padding-left: 50px;
     padding-right: 50px;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid lightgray;
     width: 100%;
     padding-top: 15px;
     padding-bottom: 15px;
     justify-content: space-between;
     align-items: center;
+    background-color: white;
+
+    position: fixed;
+    top: 0;
+    z-index: 1;
 }
 
 .search-image{
     display: flex;
+
     align-items: center;
     justify-content: space-between;
-    width: 175px;
-    font-size: 28px;
+    width: 145px;
+    font-size: 24px;
+}
+
+.insta-logo{
+    border-right: 1px solid lightgray;
+    padding-right: 10px;
+    margin-right: 10px;
 }

@@ -1,6 +1,8 @@
 import React from 'react';
 import './PostContainer.css';
 import PropTypes from 'prop-types';
+import Moment from 'react-moment';
+
 import { MessageCircle, Heart } from 'react-feather';
 
 
@@ -36,7 +38,7 @@ export default function PostContainer(props) {
             </div>
 
             <div className="post-footer-container">
-                {props.data.timestamp}
+                <Moment fromNow>{props.data.timestamp}</Moment>
                 <br />
                 <br />
                 <input type="text" value="add a comment..." />
