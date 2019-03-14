@@ -22,9 +22,9 @@ export default function PostContainer(props) {
 
             <div className="post-interaction-container">
                 <div className="icon">
-                    <Heart size={36}/>
-                    <MessageCircle size={36}/>
-                    <span>{props.data.likes} likes </span>
+                    <Heart size={36} strokeWidth={1}/>
+                    <MessageCircle size={36} strokeWidth={1}/>
+                    <span>{props.data.likes}     likes </span>
                 </div>
 
             </div>

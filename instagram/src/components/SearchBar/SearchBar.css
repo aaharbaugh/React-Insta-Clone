@@ -1,0 +1,19 @@
+.search-bar{
+    display: flex;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-bottom: 1px solid gray;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-image{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 175px;
+    font-size: 28px;
+}
