@@ -1,6 +1,8 @@
 import React from 'react';
 import './PostContainer.css';
 import PropTypes from 'prop-types';
+import { MessageCircle, Heart } from 'react-feather';
+
 
 import CommentSection from "../CommentSection/CommentSection";
 
@@ -8,19 +10,38 @@ export default function PostContainer(props) {
 
     return (
         <div className="post-container">
+
             <div className="post-user-container">
                 <img className="thumbnail" src={props.data.thumbnailUrl} />
                 <span>{props.data.username}</span>
             </div>
+
             <div className="post-image-container">
                 <img className="image" src={props.data.imageUrl} />
             </div>
+
             <div className="post-interaction-container">
-                <img className="image" src={props.data.imageUrl} />
+                <div className="icon">
+                    <Heart size={36}/>
+                    <MessageCircle size={36}/>
+                    <span>{props.data.likes} likes </span>
+                </div>
+
             </div>
-            {props.data.comments.map((comment, index) => {
-                return <CommentSection data={comment} key={index}/>
-            })}    
+
+            <div className="post-comments-container">
+                {props.data.comments.map((comment, index) => {
+                    return <CommentSection data={comment} key={index}/>
+                })}    
+            </div>
+
+            <div className="post-footer-container">
+                {props.data.timestamp}
+                <br />
+                <br />
+                <input type="text" value="add a comment..." />
+            </div>
+
         </div>
     )
 }
