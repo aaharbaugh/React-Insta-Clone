@@ -11,18 +11,25 @@ class App extends Component {
     super();
 
     this.state = {
-      data: data,
+      data: [],
 
     }
+  }
+
+  componentDidMount(){
+    setTimeout(() => {
+      this.setState({ data: data });
+    }, 1000);
   }
 
   render() {
     return (
       <div className="App">
             <SearchBar />
-            {this.state.data.map(post => {
+            {this.state.data.length > 0 ? this.state.data.map(post => {
                 return <PostContainer data={post} key={post.timestamp}/>
-              })}
+              }) : <br /> }
+
       </div>
     );
   }

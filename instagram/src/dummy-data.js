@@ -31,7 +31,7 @@ const dummyData = [
     imageUrl:
       "https://tk-assets.lambdaschool.com/89d13918-b7a2-4b40-9658-f376ea3f6b59_37131538_213683546146400_1083714364399157248_n.jpg",
     likes: 4307,
-    timestamp: "2017-11-16T17:53:01+05:30",
+    timestamp: "2018-11-16T17:53:01+05:30",
     comments: [
       {
         username: "twitch",
