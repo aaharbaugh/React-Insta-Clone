@@ -3,7 +3,7 @@ import './PostContainer.css';
 import PropTypes from 'prop-types';
 
 
-import { MessageCircle, Heart } from 'react-feather';
+
 
 
 import CommentSection from "../CommentSection/CommentSection";
@@ -14,25 +14,16 @@ export default function PostContainer(props) {
         <div className="post-container">
 
             <div className="post-user-container">
-                <img className="thumbnail" src={props.data.thumbnailUrl} />
+                <img className="thumbnail" src={props.data.thumbnailUrl} alt={props.data.username}/>
                 <span>{props.data.username}</span>
             </div>
 
             <div className="post-image-container">
-                <img className="image" src={props.data.imageUrl} />
-            </div>
-
-            <div className="post-interaction-container">
-                <div className="icon">
-                    <Heart size={36} strokeWidth={1}/>
-                    <MessageCircle size={36} strokeWidth={1}/>
-                    <span>{props.data.likes}     likes </span>
-                </div>
-
+                <img className="image" src={props.data.imageUrl} alt={props.data.username}/>
             </div>
 
             <div className="post-comments-container">
-                <CommentSection data={props.data.comments} time={props.data.timestamp}/>
+                <CommentSection data={props.data.comments} time={props.data.timestamp} likes={props.data.likes}/>
  
             </div>
 
@@ -40,7 +31,7 @@ export default function PostContainer(props) {
 
         </div>
     )
-}
+};
 
 PostContainer.propTypes = {
     data: PropTypes.shape({
