@@ -44,6 +44,8 @@
 
 .post-comments-container{
     padding: 10px;
+    padding-top: 0;
+    padding-bottom: 3px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -51,6 +53,25 @@
 
 .post-footer-container{
     padding: 10px;
+    padding-top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-time{
+    padding-bottom: 10px;
+    font-size: 14px;
+    color: gray;
+}
+
+.footer-comment-input{
+    border: none;
+    height: 50px;
+    border-top: 1px solid lightgray;
+    width: 100%;
+    color: gray;
 }
 
 .thumbnail{

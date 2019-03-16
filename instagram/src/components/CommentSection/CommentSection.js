@@ -6,8 +6,8 @@ export default function CommentSection(props) {
 
     return (
         <div className="comment-section">
-            {props.data.username}
-            {props.data.text}
+            <span className="comment-username">{props.data.username}</span>
+            <span className="comment-text">{props.data.text}</span>
         </div>
     )
 }

@@ -38,10 +38,8 @@ export default function PostContainer(props) {
             </div>
 
             <div className="post-footer-container">
-                <Moment fromNow>{props.data.timestamp}</Moment>
-                <br />
-                <br />
-                <input type="text" value="add a comment..." />
+                <div className="footer-time"><Moment fromNow>{props.data.timestamp}</Moment></div>
+                <input className="footer-comment-input" type="text" placeholder="Add a comment..." />
             </div>
 
         </div>
