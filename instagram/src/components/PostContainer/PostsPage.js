@@ -27,7 +27,7 @@ class PostsPage extends Component {
       <div className="App">
             <SearchBar />
             {this.state.data.length > 0 ? this.state.data.map(post => {
-                return <PostContainer data={post} key={post.timestamp}/>
+                return <PostContainer data={post} key={post.timestamp} username={this.props.username}/>
               }) : <br /> }
 
       </div>

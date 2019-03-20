@@ -23,7 +23,7 @@ export default function PostContainer(props) {
             </div>
 
             <div className="post-comments-container">
-                <CommentSection data={props.data.comments} time={props.data.timestamp} likes={props.data.likes}/>
+                <CommentSection username={props.username} data={props.data.comments} time={props.data.timestamp} likes={props.data.likes}/>
  
             </div>
 

@@ -19,7 +19,7 @@ class CommentSection extends Component {
     addNewComment = event => {
 
         event.preventDefault();
-        const newComment = {text: this.state.newComment, username: 'aaron-h'}
+        const newComment = {text: this.state.newComment, username: this.props.username}
         console.log(this.state.data)
         this.setState(prevstate => ({data: [...prevstate.data, newComment], newComment: ''}))
     }
