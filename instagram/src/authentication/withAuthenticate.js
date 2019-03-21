@@ -27,8 +27,11 @@ const withAuthenticate = HOCComponent => HOCComponent2 => {
         render(){
             return (
               <>
-              <HOCComponent username={this.state.username}/>
-              <HOCComponent2 />    
+              {this.state.loggedIn
+              ? <HOCComponent username={this.state.username}/>
+              : <HOCComponent2 />    
+              }
+                
               </>  
             )
         }

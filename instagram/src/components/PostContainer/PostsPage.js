@@ -12,7 +12,7 @@ class PostsPage extends Component {
 
     this.state = {
       data: [],
-
+      search: ''
     }
   }
 
@@ -22,13 +22,20 @@ class PostsPage extends Component {
     }, 1000);
   }
 
+  searchFilter = (event) => {
+    this.setState({ search: event.target.value });
+
+  }
+
   render() {
     return (
       <div className="App">
-            <SearchBar />
-            {this.state.data.length > 0 ? this.state.data.map(post => {
-                return <PostContainer data={post} key={post.timestamp} username={this.props.username}/>
-              }) : <br /> }
+            <SearchBar searchFilter={this.searchFilter}/>
+            {this.state.data.length > 0 ? this.state.data
+              .filter(post => new RegExp(this.state.search, "i").test(post.username))
+              .map(post => (
+                <PostContainer data={post} key={post.imageUrl} username={this.props.username}/>
+              )) : <br /> }
 
       </div>
     );

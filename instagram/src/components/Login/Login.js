@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import './Login.css'
+
 class LoginPage extends Component {
     constructor(props){
         super(props)
@@ -20,9 +22,9 @@ class LoginPage extends Component {
     render(){
         return(
             <div className="Login-Container">
-                <form>
-                    <input onChange={this.inputChangeHandler} type="text" name="username" value={this.state.username}/>
-                    <input type="text" name="password" />
+                <form className="Login-Form">
+                    Username: <input onChange={this.inputChangeHandler} type="text" name="username" value={this.state.username}/>
+                    Password: <input type="text" name="password" /><br />
                     <button onClick={this.login}>Submit</button>
                 </form>
             

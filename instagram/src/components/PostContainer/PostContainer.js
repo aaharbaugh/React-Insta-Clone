@@ -11,26 +11,31 @@ import CommentSection from "../CommentSection/CommentSection";
 export default function PostContainer(props) {
 
     return (
+
         <div className="post-container">
 
             <div className="post-user-container">
+
                 <img className="thumbnail" src={props.data.thumbnailUrl} alt={props.data.username}/>
                 <span>{props.data.username}</span>
+
             </div>
 
             <div className="post-image-container">
+
                 <img className="image" src={props.data.imageUrl} alt={props.data.username}/>
+
             </div>
 
             <div className="post-comments-container">
-                <CommentSection username={props.username} data={props.data.comments} time={props.data.timestamp} likes={props.data.likes}/>
+
+                <CommentSection postId={props.imageUrl} username={props.username} data={props.data.comments} time={props.data.timestamp} likes={props.data.likes}/>
  
             </div>
-
-            
-
         </div>
+
     )
+
 };
 
 PostContainer.propTypes = {

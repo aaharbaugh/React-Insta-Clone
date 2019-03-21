@@ -8,20 +8,46 @@ class CommentSection extends Component {
         super();
 
         this.state = {
-            data: props.data,
+            data: [],
             time: props.time,
             likes: props.likes,
             clicked: false,
             newComment: ''
         }
     };
+
+    componentDidMount(){
+        const id = this.props.postId;
+        if(localStorage.getItem(id)){
+            this.setState({
+                data: JSON.parse(localStorage.getItem(id))
+            })
+
+        } else {
+
+            this.storeComments();
+
+            }
+    }
+    
     
     addNewComment = event => {
 
         event.preventDefault();
         const newComment = {text: this.state.newComment, username: this.props.username}
-        console.log(this.state.data)
         this.setState(prevstate => ({data: [...prevstate.data, newComment], newComment: ''}))
+
+        setTimeout(() => {
+            this.storeComments();
+        }, 500);
+        
+    }
+
+    storeComments = () => {
+        localStorage.setItem(
+            this.props.postId,
+            JSON.stringify(this.state.data)
+        )
     }
 
     changeHandler = event => {
@@ -36,7 +62,7 @@ class CommentSection extends Component {
         this.setState({likes: this.state.likes - 1, clicked: false})
     }
 
-    render() {
+    render(){
         return (
             <>
                 <div className="post-interaction-container">

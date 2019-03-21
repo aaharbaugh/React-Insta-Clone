@@ -13,7 +13,7 @@ export default function SearchBar(props) {
                 <span>Instagram</span>
             </div>
             <div className="search-box">
-                <input type="text" placeholder="search"/>
+                <input type="text" placeholder="search" onChange={props.searchFilter}/>
             </div>
             <div className="search-icons">
                 <Compass strokeWidth={1} size={48} />
