@@ -1,38 +1,85 @@
 import React from 'react';
-import './PostContainer.css';
+
 import PropTypes from 'prop-types';
-
-
-
-
+import styled from "styled-components";
 
 import CommentSection from "../CommentSection/CommentSection";
+
+
+const PostContainerDiv = styled.div`
+    border: 1px solid rgb(224, 224, 224);
+    display: flex;
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 100%;
+    max-width: 600px;
+    margin: 10px;
+`;
+
+const PostUserContainerDiv = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+
+    & span {
+        font-weight: bold;
+    }
+`;
+
+const Thumbnail = styled.img`
+    margin-right: 10px;
+    border-radius: 50px;
+    width: 35px;
+    height: 35px;
+`;
+
+const PostCommentContainer = styled.div`
+    padding: 10px;
+    padding-top: 0;
+    padding-bottom: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+`;
+
+const PostImage = styled.img`
+    width: 100%;
+`;
+
+const PostImageContainer = styled.div`
+
+`;
 
 export default function PostContainer(props) {
 
     return (
 
-        <div className="post-container">
+        <PostContainerDiv>
 
-            <div className="post-user-container">
+            <PostUserContainerDiv>
 
-                <img className="thumbnail" src={props.data.thumbnailUrl} alt={props.data.username}/>
+                <Thumbnail src={props.data.thumbnailUrl} alt={props.data.username}/>
                 <span>{props.data.username}</span>
 
-            </div>
+            </PostUserContainerDiv>
 
-            <div className="post-image-container">
+            <PostImageContainer>
 
-                <img className="image" src={props.data.imageUrl} alt={props.data.username}/>
+                <PostImage src={props.data.imageUrl} alt={props.data.username}/>
 
-            </div>
+            </PostImageContainer>
 
-            <div className="post-comments-container">
+            <PostCommentContainer>
 
-                <CommentSection postId={props.imageUrl} username={props.username} data={props.data.comments} time={props.data.timestamp} likes={props.data.likes}/>
+                <CommentSection postId={props.data.imageUrl} username={props.username} data={props.data.comments} time={props.data.timestamp} likes={props.data.likes}/>
  
-            </div>
-        </div>
+            </PostCommentContainer>
+
+        </PostContainerDiv>
 
     )
 

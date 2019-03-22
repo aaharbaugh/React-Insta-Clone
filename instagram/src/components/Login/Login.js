@@ -1,6 +1,22 @@
 import React, { Component } from 'react';
+import styled from "styled-components";
 
-import './Login.css'
+
+const LoginContainer = styled.div`
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+const LoginForm = styled.form`
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    width: 200px;
+`;
 
 class LoginPage extends Component {
     constructor(props){
@@ -21,14 +37,15 @@ class LoginPage extends Component {
 
     render(){
         return(
-            <div className="Login-Container">
-                <form className="Login-Form">
+            <LoginContainer>
+
+                <LoginForm>
                     Username: <input onChange={this.inputChangeHandler} type="text" name="username" value={this.state.username}/>
                     Password: <input type="text" name="password" /><br />
                     <button onClick={this.login}>Submit</button>
-                </form>
+                </LoginForm>
             
-            </div>
+            </LoginContainer>
         )
     }
 }

@@ -23,12 +23,21 @@ const withAuthenticate = HOCComponent => HOCComponent2 => {
                   })
               }
         }
+
+        logout = () => {
+            this.setState(prevState => {
+                return { 
+                    username: '',
+                    loggedIn: false
+                    }
+                })
+        }
    
         render(){
             return (
               <>
               {this.state.loggedIn
-              ? <HOCComponent username={this.state.username}/>
+              ? <HOCComponent username={this.state.username} logoutFunction={this.logout}/>
               : <HOCComponent2 />    
               }
                 
